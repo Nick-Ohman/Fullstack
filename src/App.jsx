@@ -1,16 +1,14 @@
 
-const Part = (...props) => {
-  console.log(props.part1)
-  return(
-    <div>
-    <p>{props.part1}-{props.exercises1}</p>
-    <p>{props.part2}-{props.exercises2}</p>
-    <p>{props.part3}-{props.exercises3}</p>
-</div>
-  )
-}
-const Header = (props) => {
+const Part = (props) => {
+  if (props.part1) {
+    return (<p>{props.part1}-{props.exercises1}</p>)
+  } else if (props.part2) {
+    return (<p>{props.part2}-{props.exercises2}</p>)
+  } else { return (<p>{props.part3}-{props.exercises3}</p>)}
   
+} 
+
+const Header = (props) => {
   return (
     <div>
       <h1>
@@ -22,16 +20,10 @@ const Header = (props) => {
 const Content = (props) => {
   return (
     <div>
+        <Part part1={props.part1} exercises1={props.exercises1} /> 
+        <Part part2={props.part2}exercises2={props.exercises2}/>
+        <Part part3={props.part3}exercises3={props.exercises3}/>
       
-        <p>{props.part1}-{props.exercises1}</p>
-        
-        <p>
-        {props.part2}-{props.exercises2}
-        </p>
-        <p>
-        {props.part3}-{props.exercises3}
-        </p>
-        <Part /> 
     </div>
   )
 }
