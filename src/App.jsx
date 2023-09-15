@@ -1,10 +1,8 @@
 
 const Part = (props) => {
-  if (props.part1) {
-    return (<p>{props.part1}-{props.exercises1}</p>)
-  } else if (props.part2) {
-    return (<p>{props.part2}-{props.exercises2}</p>)
-  } else { return (<p>{props.part3}-{props.exercises3}</p>)}
+  if (props.part1.part1) {
+    return <p>{props.part1.part1.name}-{props.part1.part1.exercises}</p>
+  } 
   
 } 
 
@@ -18,22 +16,23 @@ const Header = (props) => {
   )
 }
 const Content = (part1) => {
-  console.log()
+  
   return (
     <div>
      <p> {part1.part1.name}- {part1.part1.exercises}</p>
      <p>{part1.part2.name}- {part1.part2.exercises}</p>
      <p> {part1.part3.name}- {part1.part3.exercises}</p>
-     
+     <Part part1={part1} />
+    
     </div>
   )
 }
 
-const Total = ({part1, part2, part3}) => {
-  
+const Total = (part1) => {
+  let value = part1.part1.exercises + part1.part2.exercises + part1.part3.exercises;
   return (
     <div>
-      
+      {value}
     </div>
   )
 }
@@ -56,7 +55,7 @@ const App = () => {
     <div>
       <Header course={course} />
      <Content part1={part1} part2={part2} part3={part3}/>
-      <Total />
+      <Total part1={part1} part2={part2} part3={part3}/>
     </div>
   )
 }
