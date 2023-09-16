@@ -12,6 +12,7 @@ const Header = (props) => {
       <h1>
         {props.course}
       </h1>
+      <p>hello</p>
     </div>
   )
 }
