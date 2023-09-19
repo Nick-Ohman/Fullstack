@@ -49,7 +49,7 @@ const App = () => {
     exercises: 10
   }
   const part2 = {
-    name: 'Using props to pass data.......',
+    name: 'Using props to pass data............',
     exercises: 7
   }
   const part3 = {
