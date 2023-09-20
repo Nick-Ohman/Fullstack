@@ -1,8 +1,12 @@
 
 const Part = (props) => {
-  if (props.part1.part1) {
-    return <p>{props.part1.part1.name}-{props.part1.part1.exercises}</p>
-  } 
+  return(
+  <>
+    <p> {props.part1.name}- {props.part1.exercises}</p>
+     <p>{part2.name}- {part2.exercises}</p>
+     <p> {part3.name}- {part3.exercises}</p>
+     </>
+  )
   
 } 
 
@@ -24,12 +28,9 @@ const Content = ({part1, part2, part3}) => {
 
   return (
     <div>
-      
-     <p> {part1.part1.name}- {part1.part1.exercises}</p>
-     <p>{part2.part2.name}- {part2.part2.exercises}</p>
-     <p> {part3.part3.name}- {part3.part3.exercises}</p>
      <Part part1={part1} />
-    
+    <Part part2 ={part2}/>
+    <Part part3={part3}/>
     </div>
   )
 }
@@ -49,11 +50,11 @@ const App = () => {
     exercises: 10
   }
   const part2 = {
-    name: 'Using props to pass data............',
+    name: 'Using props to pass data',
     exercises: 7
   }
   const part3 = {
-    name: 'State of a component....',
+    name: 'State of a component',
     exercises: 14
   }
   
@@ -61,7 +62,7 @@ const App = () => {
     <div>
       <Header course={course} />
      <Content part1={part1} part2={part2} part3={part3}/>
-      <Total part1={part1} part2={part2} part3={part3}/>
+      <Total part1={{name: 'Fundamentals of React', exercises: 10}} part2={{name: 'Using props to pass data', exercises: 7}} part3={{name: 'State of a component', exercises: 14}}/>
     </div>
   )
 }
