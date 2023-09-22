@@ -1,30 +1,20 @@
 
-const Part = (props) => {
-
+const Part = (props1) => {
+  
   
   return(
-    <p> {props.props.part1.name}</p>
+    <p> {props1.props1.part1.name}</p>
     
     
-  )
-  
+  ) 
 } 
 
-const Header = (props) => {
-  return (
-    <div>
-      <h1>
-        {props.course}
-      </h1>
-    </div>
-  )
-}
 const Content = (props) => {
   
 
   return (
     <div>
-    <Part props={props}></Part>
+    <Part props1={props}></Part>
     </div>
   )
 }
@@ -37,6 +27,17 @@ const Total = (part1) => {
     </div>
   )
 }
+
+const Header = (props) => {
+  return (
+    <div>
+      <h1>
+        {props.course}
+      </h1>
+    </div>
+  )
+}
+
 const App = () => {
   const course = 'Half Stack application development'
   const part1 = {
